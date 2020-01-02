@@ -1,5 +1,5 @@
 # Generate all prime Numbers upto a given Value N.
-# Algorihm Used :- Sieve of Eratosthenes
+# Algorithm Used :- Sieve of Eratosthenes
 
 def generatePrimeNos(N):
     primes = [True]*(N+1)
@@ -23,3 +23,13 @@ def main():
         if primeList[x]:print(x)
 
 main()
+
+
+
+
+
+
+
+
+
+
