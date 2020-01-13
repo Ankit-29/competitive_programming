@@ -5,7 +5,7 @@
 def maxSumSubarrayOfSizeK(arr,k):
     currSum = 0
     maxSum = 0
-    if(k<len(arr)): 
+    if(k>len(arr)): 
         return -1
 
     for x in range(k):
