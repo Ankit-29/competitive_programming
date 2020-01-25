@@ -10,13 +10,19 @@ repeating characters. e.g.
 "tmmzuxt" -> 5
 '''
 def lengthOfLongestSubstring(s: str) -> int:
-        longest = 0
-        left = 0
+        longest = 0 
+        left = 0 # Left most index of current substring
         Hash = dict()
         for x in range(len(s)):
+            # Check if character already present 
             if(s[x] in Hash):
-                left = max(Hash[s[x]]+1,left)
+                # Change Left index
+                left = max(Hash[s[x]]+1,left) 
+            
+            # Update Hash
             Hash[s[x]] = x
+            
+            # Calculate longest length
             longest = max(longest,x - left + 1) 
             
         return longest
