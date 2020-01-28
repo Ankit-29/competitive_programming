@@ -1,3 +1,4 @@
+# Intersection of two arrays.
 '''
 Given two arrays, write a function to compute their intersection.
 e.g.
