@@ -9,19 +9,24 @@ Output: false
 '''
 
 def wordPattern(pattern: str,S:str) -> bool:
-    d0 = {}; d1 = {}
-    plist = list(pattern)
-    slist = S.split(' ')
-    if len(plist) != len(slist): return False 
-    for ch, word in zip(plist, slist): 
-        #print(ch, word)
-        if ch not in d0:
-            d0[ch] = word
-        if word not in d1:
-            d1[word] = ch
-        if d0[ch] != word or d1[word] != ch:
-            return False 
-    return True 
+    Hash = dict()
+    HashTwo = dict()        
+    words = S.split()
+    if(len(words)!=len(pattern)):
+        return False
+
+    for x in range(len(pattern)):
+        ch = pattern[x]
+        word = words[x]
+        if(ch not in Hash):
+            Hash[ch] = word
+        if(word not in HashTwo):
+            HashTwo[word] = ch
+
+        if(Hash[ch] != word or HashTwo[word] != ch):
+            return False
+        
+    return True
 
 pattern = "abba"
 S = "dog cat cat dog"
