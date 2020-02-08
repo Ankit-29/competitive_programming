@@ -11,7 +11,7 @@ Output: false
 def wordPattern(pattern: str,S:str) -> bool:
     d0 = {}; d1 = {}
     plist = list(pattern)
-    slist = str.split(' ')
+    slist = S.split(' ')
     if len(plist) != len(slist): return False 
     for ch, word in zip(plist, slist): 
         #print(ch, word)
