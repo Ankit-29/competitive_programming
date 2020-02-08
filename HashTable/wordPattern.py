@@ -9,8 +9,19 @@ Output: false
 '''
 
 def wordPattern(pattern: str,S:str) -> bool:
-    pass
-
+    d0 = {}; d1 = {}
+    plist = list(pattern)
+    slist = str.split(' ')
+    if len(plist) != len(slist): return False 
+    for ch, word in zip(plist, slist): 
+        #print(ch, word)
+        if ch not in d0:
+            d0[ch] = word
+        if word not in d1:
+            d1[word] = ch
+        if d0[ch] != word or d1[word] != ch:
+            return False 
+    return True 
 
 pattern = "abba"
 S = "dog cat cat dog"
