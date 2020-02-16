@@ -13,20 +13,28 @@ def permutationsInSubString(s1: str, s2: str) -> bool:
     HashB = [0]*26
     l1 = len(s1)
     l2 = len(s2)
+    if(l1>l2):return False
+    
     for x in s1:
         Hash[ord(x)-ord('a')] += 1
     
     for x in range(l1):
         HashB[ord(s2[x])-ord('a')] += 1
-            
+    
+    for y in range(26):
+            if(HashB[y]!=Hash[y]):
+                break
+            if(y==25):
+                return True
+    
     for x in range(l1,l2):
+        HashB[ord(s2[x-l1])-ord('a')] -= 1
+        HashB[ord(s2[x])-ord('a')] += 1
         for y in range(26):
             if(HashB[y]!=Hash[y]):
                 break
             if(y==25):
                 return True
-        HashB[ord(s2[x-l1])-ord('a')] -= 1
-        HashB[ord(s2[x])-ord('a')] += 1
     
     return False
 
