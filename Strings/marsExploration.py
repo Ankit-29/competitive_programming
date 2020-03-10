@@ -9,7 +9,7 @@ Print the number of letters in Sami's message that were altered by cosmic radiat
 Input: SOSSPSSQSSOR
 Output: 3
 '''
-def marsExploration(s):
+def marsExploration(s :str) -> int:
     i = 0
     count = 0
     while(i<len(s)-2):
