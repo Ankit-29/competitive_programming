@@ -11,7 +11,7 @@ Input: s = "CONTEST IS COMING"
 Output: ["CIC","OSO","N M","T I","E N","S G","T"]
 '''
 from typing import List
-def printVertically(self, s: str) -> List[str]:
+def printVertically(s: str) -> List[str]:
     wordList = s.split()
     l = 0
     for x in wordList:
@@ -25,3 +25,6 @@ def printVertically(self, s: str) -> List[str]:
         ret.append(temp.rstrip())
     
     return ret
+
+s = "CONTEST IS COMING"
+print(printVertically(s))
