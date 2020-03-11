@@ -11,6 +11,7 @@ Output: 18880
 
 from typing import List
 
+# Node
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -19,12 +20,12 @@ class ListNode:
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
         nodeVal = list()
-        l = 0
+        l = 0 # length
         while(head!=None):
             nodeVal.append(head.val)
+            head = head.next 
             l +=1
-            head = head.next
-        
+
         
         power = 2**(l-1)
         dec = 0
