@@ -1,6 +1,5 @@
 '''
 Given a string s. You should re-order the string using the following algorithm:
-
 - Pick the smallest character from s and append it to the result.
 - Pick the smallest character from s which is greater than the last appended character to the result and append it.
 - Repeat step 2 until you cannot pick more characters.
