@@ -20,13 +20,15 @@ The length of the given array is in range [2, 10,000], and will be even.
 The number in given array is in range [-100,000, 100,000].
 '''
 
-from collections import defaultdict
 from typing import List
+
 def distributeCandies(candies: List[int]) -> int:
-    Hash = defaultdict(int) 
+    Hash = {} 
     for x in candies:
-        Hash[x] += 1
-    
+        if(x in Hash):
+            Hash[x] += 1
+        else:
+            Hash[x] = 0
     totalTypes = len(Hash.keys())
     candyForOne = len(candies)//2
     return min(candyForOne,totalTypes)
